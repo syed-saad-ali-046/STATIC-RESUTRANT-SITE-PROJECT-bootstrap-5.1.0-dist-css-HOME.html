@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>David Chu's China Bistro</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oxygen+Mono&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lora&display=swap" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ </head>
+<style>
+    body{
+        font-size: 16px;
+        color: #fff;
+        background-color: #61122f;
+        font-family: 'Oxygen Mono', monospace;
+       }
+       #nav-bar{
+           background-color: #f6b319;
+           border-radius: 0%;
+           border: 0ch; 
+       }
+       #logo-image{
+           width: 150px;
+           height: 150px;
+           margin: 10px 15px 10px 0px;
+           background-image: url("https://www.davidchuschinabistro.com/images/restaurant-logo_large.png");
+           
+        }
+        .navbar-brand{
+            padding: top 25px;
+        }
+        .navbar-brand h1{
+            font-family:'Lora', serif; ;
+            color:#557c3e;
+            font-size: 1.5em;
+            text-transform:uppercase ;
+            font-weight: bold;
+            text-shadow: 1px 1px 1px #222;
+            margin-top: 0;
+            margin-bottom:0 ;
+            line-height: 0.75;
+        }
+        .navbar-brand a:hover ,.navbar-brand a:focus{
+            text-decoration:none;
+        }
+        .navbar-brand p{
+            color:#000;
+            text-transform: uppercase;
+            font-size: 0.7em;
+            margin-top: 15px;
+
+        }
+        #nav-list{
+            margin-top: 10px;
+        }
+        #nav-list a{
+            color:#951c49 ;
+            text-align: center;
+
+        }
+        #nav-list a:hover{
+            color: #e7e7e7;
+            text-align: center;
+        }
+        #nav-list a span{
+            font-size: 1.8em;
+       }
+       #phone{
+           margin-top: 5px;
+       }
+       #phone a{
+           text-align: right;
+           padding-bottom: 0;
+       }
+       #phone article{
+           color: #557c3e;
+           text-align: right;
+           padding-right: 15px;
+       } 
+       .navbar-header button.navbar-toggle,.navbar-header .icon-bar{
+           border: 1px solid #61122f;
+       }
+       .container .jumbotron{
+           box-shadow: 0 0 50px #3F0C1F;
+           border: 2px solid #3F0C1F;
+           width: 100%;
+       }
+      
+       .panel-footer {
+           margin-top: 30px;
+           padding-top: 35px;
+           padding-bottom: 30px;
+           background-color: #222;
+           border-top: 0;
+       }
+       .panel-footer div.row {
+           margin-bottom: 35px;
+       }
+       #hours, #address {
+           line-height: 2;
+       }
+       #hours > span, #address > span {
+           font-size: 1.4em;
+       }
+       #address p {
+           color: #557c3e;
+           font-size: .8em;
+           line-height: 1.8;
+       }
+       #testimonials {
+           font-style: italic;
+       }
+       #testimonials p:nth-child(2) {
+           margin-top: 25px;
+       }
+      /*Menu-page styling start */
+      .category-tile{
+          position: relative;
+          border: 2px solid #3F0C1F;
+          overflow: hidden;
+          width: 200px;
+          height: 200px;
+          background-color: #61122f;
+          margin: 0 auto 15px;
+      }
+      .category-tile span{
+          position:absolute;
+          bottom: 0;
+          right: 0;
+          width: 100%;
+          text-align: center;
+          font-size: 1.2em;
+          text-transform: uppercase;
+          background-color: #000;
+          color: #fff;
+          opacity: 0.8;
+        }
+        .category-tile:hover{
+            box-shadow: 0 1px 5px 1px #cccccc;
+        }
+        #menu + div{
+            margin-bottom: 50px;
+        }
+        /*menu page styling ends here*/
+        /*single-category page styling starts here*/
+        .menu-item-tile{
+            margin-bottom:25px;
+        }
+        .menu-item-tile hr{
+            width:80%;
+        }
+      .menu-item-tile .menu-item-price{
+          font-size: 1.1em;
+          text-align: right;
+          margin-top: -15px;
+          margin-bottom:-15px;
+      }
+      .menu-item-tile .menu-item-price span{
+          font-size: .6em;
+      }
+      .menu-item-photo{
+          position:relative;
+          border:2px solid #3F0C1F;
+          overflow: hidden;
+          padding: 0;
+          margin-right: -15px;
+          margin-left: auto;
+          margin-bottom: 20px;
+          max-width: 250px;
+        }
+        .menu-item-photo div{
+            position: absolute;
+            bottom: 0;
+            right: 0%;
+            width: 80px;
+            background-color: #557c3e;
+            text-align: center;
+        }
+        .menu-item-description{
+            padding-right: 30px;
+        }
+        h3.menu-item-details{
+            margin: 0 0 10px;
+        }
+        .menu-itemm-details{
+            font-size: .9em;
+            font-style: italic;
+        }
+
+    
+    
+      
+
+        @media(max-width:768px){
+            .navbar-brand{
+                padding: top 10px;
+                height:80px;
+            }
+            .navbar-brand h1{
+                padding-top: 10px;
+                font-size: 5vw;
+            }
+            .navbar-brand p{
+                text-transform: uppercase;
+                font-size: .6em;
+                margin-top: 12px;
+            }
+            .navbar-brand p img{
+                height: 20px;
+            }
+           .container .jumbotron{
+                margin-top: 30px;
+                padding: 0;
+                box-shadow: 0 0 50px;
+                border: 2px solid #3F0C1F;
+
+
+            }
+            #menu-tiles,#special-tiles{
+                width:360px;
+                margin: 0 auto 15px ;
+            }
+            .panel-footer section {
+                margin-bottom: 30px;
+                text-align: center;
+            }
+            .panel-footer section:nth-child(3) {
+                margin-bottom: 0;
+            }
+            .panel-footer section hr {
+                width: 50%;
+            }
+            .menu-item-photo{
+                margin-right: auto;
+            }
+            .menu-item-tile .menu-item-price{
+                text-align: center;
+            }
+            .menu-item-description{
+                text-align: center;
+            }
+        }
+        @media(max-width: 479px){
+            .navbar-brand h1 { /* Restaurant name */
+                padding-top: 5px;
+                font-size: 4vw;
+            }
+            #menu-tile, #specials-tile {
+                width: 280px;
+                margin: 0 auto 15px;
+            }
+            #menu-tile{
+                padding-left: 20px;
+                padding-right: 20px;
+            }
+            #logo-image{
+            width: auto;
+            height: auto;
+            margin: auto;
+            background: url("https://www.davidchuschinabistro.com/images/restaurant-logo_medium.png"); 
+            }
+            .col-xxs-12 {
+                position: relative;
+                min-height: 1px;
+                padding-right: 15px;
+                padding-left: 15px;
+                float: left;
+                width: 100%;
+            }
+        }
+
+        
+</style>
+<body>
+     <header>
+         <nav id="nav-bar" class="navbar navbar-default">
+             <div class="container">
+                 <div class="navbar-header">
+                     <a href="HOME.html" class="float-left visible-md visible-lg">
+                        <div id="logo-image" alt="LOGO-image"></div>
+
+                     </a>
+                </div>
+                <div class="navbar-brand">
+                    <a href="HOME.html"><h1>David Chu's China Bistro</h1></a>
+                    <p>
+                        <img src="https://www.davidchuschinabistro.com/images/star-k-logo.png" alt="Kosher Certification">
+                        <span>Kosher Certified</span>
+                    </p>
+                </div>
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#collapasble-nav" aria-expanded="false">
+                        <span class="sr-only">Toggle Navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                     
+                </div>
+                
+                    
+                    
+                    <div id="collapasble-nav" class="collapse navbar-collapse" id="navbar">
+                        <ul id="nav-list" class="nav navbar-nav navbar-right">
+                            <li class="visible-xs active">
+                                <a href="HOME.html">
+                                    <span class="glyphicon glyphicon-home"></span>Home
+                                </a>
+                            </li>
+
+                            <li>
+                                <a href="menu-categories.html">
+                                    <span class="glyphicon glyphicon-cutlery"></span><br
+                                    class="hidden-xs">Menu</a>
+                            </li>
+                            <li>
+                                <a href="ABOUT.html">
+                                    <span class="glyphicon glyphicon-info-sign"></span><br
+                                    class="hidden-xs">About</a>
+                            </li>
+                            <li >
+                                <a href="award.html">
+                                    <span class="glyphicon glyphicon-certificate"></span><br
+                                    class="hidden-xs">Award</a>
+                            </li>
+                            <li id="phone" class="hidden-xs">
+                                <a href="tel:410-602-5000">
+                                    <span>410-602-5000</span></a><article>* We Deliver</article>
+    
+                            </li>
+                        </ul>
+    
+                    </div>
+                </div>
+         </nav>
+     </header>
+     
+    <div id="main-content" class="contaner">
+        <h2 id="menu-categories-title" class="text-center">Lunch Menu <br>
+            <h4 class="text-center">Lunch is not served after 1pm</h4>
+        </h2>
+
+        <section class="row">
+            <div class="menu-item-tile col-md-6">
+                <div class="row">
+                  <div class="col-sm-5">
+                    <div class="menu-item-photo">
+                      <div>D01</div>
+                      <img class="img-responsive" width="250" height="150" src="https://www.davidchuschinabistro.com/images/L9.jpg" alt="Item">
+                    </div>
+                    <div class="menu-item-price">($10.95)<span>pint</span>($14.95)<span>quart</span></div>
+                  </div>
+                  <div class="menu-item-description col-sm-7">
+                    <h3 class="menu-item-title">Sweet and Sour Chicken</h3>
+                    <p class="menu-item-details">white meat chicken, breaded and fried with some green pepper, onion, and pineapples</p>
+                  </div>
+                </div>
+                <hr class="visible-xs">
+              </div> 
+              
+              <div class="menu-item-tile col-md-6">
+                <div class="row">
+                  <div class="col-sm-5">
+                    <div class="menu-item-photo">
+                      <div>D02</div>
+                      <img class="img-responsive" width="250" height="150" src="https://www.davidchuschinabistro.com/images/L9.jpg" alt="Item">
+                    </div>
+                    <div class="menu-item-price">($10.95)<span>pint</span>($14.95)<span>quart</span></div>
+                  </div>
+                  <div class="menu-item-description col-sm-7">
+                    <h3 class="menu-item-title">Sweet and Sour Chicken</h3>
+                    <p class="menu-item-details">white meat chicken, breaded and fried with some green pepper, onion, and pineapples</p>
+                  </div>
+                </div>
+                <hr class="visible-xs">
+              </div> 
+             
+
+              <div class="menu-item-tile col-md-6">
+                <div class="row">
+                  <div class="col-sm-5">
+                    <div class="menu-item-photo">
+                      <div>D03</div>
+                      <img class="img-responsive" width="250" height="150" src="https://www.davidchuschinabistro.com/images/L9.jpg" alt="Item">
+                    </div>
+                    <div class="menu-item-price">($10.95)<span>pint</span>($14.95)<span>quart</span></div>
+                  </div>
+                  <div class="menu-item-description col-sm-7">
+                    <h3 class="menu-item-title">Sweet and Sour Chicken</h3>
+                    <p class="menu-item-details">white meat chicken, breaded and fried with some green pepper, onion, and pineapples</p>
+                  </div>
+                </div>
+                <hr class="visible-xs">
+              </div> 
+         
+
+              <div class="menu-item-tile col-md-6">
+                <div class="row">
+                  <div class="col-sm-5">
+                    <div class="menu-item-photo">
+                      <div>D04</div>
+                      <img class="img-responsive" width="250" height="150" src="https://www.davidchuschinabistro.com/images/L9.jpg" alt="Item">
+                    </div>
+                    <div class="menu-item-price">($10.95)<span>pint</span>($14.95)<span>quart</span></div>
+                  </div>
+                  <div class="menu-item-description col-sm-7">
+                    <h3 class="menu-item-title">Sweet and Sour Chicken</h3>
+                    <p class="menu-item-details">white meat chicken, breaded and fried with some green pepper, onion, and pineapples</p>
+                  </div>
+                </div>
+                <hr class="visible-xs">
+              </div> 
+            
+
+              <div class="menu-item-tile col-md-6">
+                <div class="row">
+                  <div class="col-sm-5">
+                    <div class="menu-item-photo">
+                      <div>D05</div>
+                      <img class="img-responsive" width="250" height="150" src="https://www.davidchuschinabistro.com/images/L9.jpg" alt="Item">
+                    </div>
+                    <div class="menu-item-price">($10.95)<span>pint</span>($14.95)<span>quart</span></div>
+                  </div>
+                  <div class="menu-item-description col-sm-7">
+                    <h3 class="menu-item-title">Sweet and Sour Chicken</h3>
+                    <p class="menu-item-details">white meat chicken, breaded and fried with some green pepper, onion, and pineapples</p>
+                  </div>
+                </div>
+                <hr class="visible-xs">
+              </div> 
+              
+
+              <div class="menu-item-tile col-md-6">
+                <div class="row">
+                  <div class="col-sm-5">
+                    <div class="menu-item-photo">
+                      <div>D06</div>
+                      <img class="img-responsive" width="250" height="150" src="https://www.davidchuschinabistro.com/images/L9.jpg" alt="Item">
+                    </div>
+                    <div class="menu-item-price">($10.95)<span>pint</span>($14.95)<span>quart</span></div>
+                  </div>
+                  <div class="menu-item-description col-sm-7">
+                    <h3 class="menu-item-title">Sweet and Sour Chicken</h3>
+                    <p class="menu-item-details">white meat chicken, breaded and fried with some green pepper, onion, and pineapples</p>
+                  </div>
+                </div>
+                <hr class="visible-xs">
+              </div> 
+              
+
+              <div class="menu-item-tile col-md-6">
+                <div class="row">
+                  <div class="col-sm-5">
+                    <div class="menu-item-photo">
+                      <div>D07</div>
+                      <img class="img-responsive" width="250" height="150" src="https://www.davidchuschinabistro.com/images/L9.jpg" alt="Item">
+                    </div>
+                    <div class="menu-item-price">($10.95)<span>pint</span>($14.95)<span>quart</span></div>
+                  </div>
+                  <div class="menu-item-description col-sm-7">
+                    <h3 class="menu-item-title">Sweet and Sour Chicken</h3>
+                    <p class="menu-item-details">white meat chicken, breaded and fried with some green pepper, onion, and pineapples</p>
+                  </div>
+                </div>
+                <hr class="visible-xs">
+              </div> 
+             
+        </section>
+    
+    </div>
+    
+     
+     <footer class="panel-footer">
+        <div class="container">
+          <div class="row">
+            <section id="hours" class="col-sm-4">
+              <span>Hours:</span><br>
+              Sun-Thurs: 11:15am - 10:00pm<br>
+              Fri: 11:15am - 2:30pm<br>
+              Saturday Closed
+              <hr class="visible-xs">
+            </section>
+            <section id="address" class="col-sm-4">
+              <span>Address:</span><br>
+              7105 Reisterstown Road<br>
+              Baltimore, MD 21215
+              <p>* Delivery area within 3-4 miles, with minimum order of $20 plus $3 charge for all deliveries.</p>
+              <hr class="visible-xs">
+            </section>
+            <section id="testimonials" class="col-sm-4">
+              <p>"The best Chinese restaurant I've been to! And that's saying a lot, since I've been to many!"</p>
+              <p>"Amazing food! Great service! Couldn't ask for more! I'll be back again and again!"</p>
+            </section>
+          </div>
+          <div class="text-center">&copy; Copyright David Chu's China Bistro 2021</div>
+        </div>
+      </footer>
+   

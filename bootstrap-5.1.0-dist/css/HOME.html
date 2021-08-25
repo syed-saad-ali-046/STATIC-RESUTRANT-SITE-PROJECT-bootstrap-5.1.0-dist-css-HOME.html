@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>David Chu's China Bistro</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oxygen+Mono&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lora&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/public.css" class="ng-scope">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ </head>
+ <style>
+     body{
+         font-size: 16px;
+         color: #fff;
+         background-color: #61122f;
+         font-family: 'Oxygen Mono', monospace;
+        }
+        #nav-bar{
+            background-color: #f6b319;
+            border-radius: 0%;
+            border: 0ch; 
+        }
+        #logo-image{
+            width: 150px;
+            height: 150px;
+            margin: 10px 15px 10px 0px;
+            background-image: url("https://www.davidchuschinabistro.com/images/restaurant-logo_large.png");
+            
+         }
+         .navbar-brand{
+             padding: top 25px;
+         }
+         .navbar-brand h1{
+             font-family:'Lora', serif; ;
+             color:#557c3e;
+             font-size: 1.5em;
+             text-transform:uppercase ;
+             font-weight: bold;
+             text-shadow: 1px 1px 1px #222;
+             margin-top: 0;
+             margin-bottom:0 ;
+             line-height: 0.75;
+         }
+         .navbar-brand a:hover ,.navbar-brand a:focus{
+             text-decoration:none;
+         }
+         .navbar-brand p{
+             color:#000;
+             text-transform: uppercase;
+             font-size: 0.7em;
+             margin-top: 15px;
+
+         }
+         #nav-list{
+             margin-top: 10px;
+         }
+         #nav-list a{
+             color:#951c49 ;
+             text-align: center;
+
+         }
+         #nav-list a:hover{
+             color: #e7e7e7;
+             text-align: center;
+         }
+         #nav-list a span{
+             font-size: 1.8em;
+        }
+        #phone{
+            margin-top: 5px;
+        }
+        #phone a{
+            text-align: right;
+            padding-bottom: 0;
+        }
+        #phone article{
+            color: #557c3e;
+            text-align: right;
+            padding-right: 15px;
+        } 
+        .navbar-header button.navbar-toggle,.navbar-header .icon-bar{
+            border: 1px solid #61122f;
+        }
+        .container .jumbotron{
+            box-shadow: 0 0 50px #3F0C1F;
+            border: 2px solid #3F0C1F;
+        }
+
+        /* Footer Tiles*/
+        #menu-tiles,#special-tiles,#map-tile{
+            height: 250px;
+            width: 100%;
+            margin-bottom: 15px;
+            position: relative;
+            border: 2px solid #3F0C1F;
+            overflow: hidden;
+        }
+        #menu-tiles,#special-tiles,#map-tile{
+            box-shadow: 0 1px 5px 1px #cccccc;
+        }
+        #menu-tiles{
+            background-image: url("https://www.davidchuschinabistro.com/images/menu-tile.jpg");
+            background-repeat: no-repeat;
+            background-size: cover;
+            padding-left: 5px;
+            background-position: center;
+        }
+        #special-tiles{
+            background-image: url("https://www.davidchuschinabistro.com/images/specials-tile.jpg");
+            background-repeat: no-repeat;
+            background-size: cover;
+            padding-left: 5px;
+            background-position: center;
+        }
+        #menu-tiles span,#special-tiles span,#map-tile span{
+            position: absolute;
+            bottom: 0;
+            right:0;
+            width: 100%;
+            text-align: center;
+            font-size: 1.6em;
+            text-transform: uppercase;
+            background-color: #000;
+            color: #fff;
+            opacity: 0.8;
+            
+        }
+        
+        .panel-footer {
+            margin-top: 30px;
+            padding-top: 35px;
+            padding-bottom: 30px;
+            background-color: #222;
+            border-top: 0;
+        }
+        .panel-footer div.row {
+            margin-bottom: 35px;
+        }
+        #hours, #address {
+            line-height: 2;
+        }
+        #hours > span, #address > span {
+            font-size: 1.4em;
+        }
+        #address p {
+            color: #557c3e;
+            font-size: .8em;
+            line-height: 1.8;
+        }
+        #testimonials {
+            font-style: italic;
+        }
+        #testimonials p:nth-child(2) {
+            margin-top: 25px;
+        }
+
+
+        @media(min-width:1200px){
+           .container .jumbotron{
+                background: url("jumbotron_1200.jpg");
+                height: 675px;
+            }
+
+        }
+    
+        @media(min-width:992px)and(max-width:1199px){
+            #logo-image{
+                width: 100px;
+                height: 100px;
+                margin: 5px 5px 5px 0;
+                background: url("https://www.davidchuschinabistro.com/images/restaurant-logo_medium.png"); 
+            }
+            .container.jumbotron{
+                background: url("jumbotron_1200.jpg") ;
+                height: 558px;
+                width: fit-content;
+            }
+
+        }
+        @media(min-width:768px)and(max-width:1024px){
+            #logo-image{
+            width: 150px;
+            height: 550px;
+            margin: 5px 5px 5px 0px;
+            background: url("https://www.davidchuschinabistro.com/images/restaurant-logo_medium.png"); 
+            }
+            .container.jumbotron{
+                background: url("jumbotron_768.jpg");
+                height: 432px;
+            }
+        }
+
+        @media(max-width:768px){
+            .container .jumbotron{
+                margin-top: 30px;
+                padding: 0;
+                background: url("jumbotron_768.jpg");
+            }
+            .navbar-brand {
+                padding-top: 10px;
+                height: 80px;
+            }
+            .navbar-brand h1 { /* Restaurant name */
+                padding-top: 10px;
+                font-size: 4vw; 
+            }
+            .navbar-brand p { /* Kosher cert */
+                font-size: .6em;
+                margin-top: 12px;
+            }
+            .navbar-brand p img { /* Star-K */
+                height: 20px;
+            }
+            #collapsable-nav a { /* Collapsed nav menu text */
+                font-size: 1.2em;
+            }
+            #collapsable-nav a span { /* Collapsed nav menu glyph */
+                font-size: 1em;
+                margin-right: 5px;
+            }
+            .panel-footer section {
+                margin-bottom: 30px;
+                text-align: center;
+            }
+            .panel-footer section:nth-child(3) {
+                margin-bottom: 0; /* margin already exists on the whole row */
+            }
+            .panel-footer section hr {
+                width: 50%;
+            }
+            #menu-tile, #specials-tile {
+                width: 360px;
+                margin: 0 auto 15px;
+            }
+            .menu-item-photo {
+                margin-right: auto;
+            }
+            .menu-item-tile .menu-item-price {
+                text-align: center;
+            }
+            .menu-item-description {
+                text-align: center;
+            }
+            #logo-image{
+            width: auto;
+            height: auto;
+            margin: auto;
+            background: url("https://www.davidchuschinabistro.com/images/restaurant-logo_medium.png"); 
+            }
+            #call-btn > a {
+                font-size: 1.5em;
+                display: block;
+                margin: 0 20px;
+                padding: 10px;
+                border: 2px solid #fff;
+                background-color: #f6b319;
+                color: #951c49;
+            }
+            #xs-deliver {
+                margin-top: 5px;
+                font-size: .7em;
+                letter-spacing: .1em;
+                text-transform: uppercase;
+            }
+        }
+        @media(max-width: 479px){
+            .navbar-brand h1 { /* Restaurant name */
+                padding-top: 5px;
+                font-size: 5vw;
+            }
+            #menu-tile, #specials-tile {
+                width: 280px;
+                margin: 0 auto 15px;
+            }
+            #menu-tile{
+                padding-left: 20px;
+                padding-right: 20px;
+            }
+            #logo-image{
+            width: auto;
+            height: auto;
+            margin: auto;
+            background: url("https://www.davidchuschinabistro.com/images/restaurant-logo_medium.png"); 
+            }
+            .col-xxs-12 {
+                position: relative;
+                min-height: 1px;
+                padding-right: 15px;
+                padding-left: 15px;
+                float: left;
+                width: 100%;
+            }
+        }
+
+            
+        
+        
+
+        
+            
+    
+       
+
+            
+</style>
+<body>
+     <header>
+         <nav id="nav-bar" class="navbar navbar-default">
+             <div class="container">
+                 <div class="navbar-header">
+                     <a href="HOME.html" class="float-left visible-md visible-lg">
+                        <div id="logo-image" alt="LOGO-image"></div>
+
+                     </a>
+                </div>
+                <div class="navbar-brand">
+                    <a href="HOME.html"><h1>David Chu's China Bistro</h1></a>
+                    <p>
+                        <img src="https://www.davidchuschinabistro.com/images/star-k-logo.png" alt="Kosher Certification">
+                        <span>Kosher Certified</span>
+                    </p>
+                </div>
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#collapasble-nav" aria-expanded="false">
+                        <span class="sr-only">Toggle Navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                     
+                </div>
+                    
+                    
+                    
+                    <div id="collapasble-nav" class="collapse navbar-collapse" id="navbar">
+                        <ul id="nav-list" class="nav navbar-nav navbar-right">
+                            <li class="visible-xs active">
+                                <a href="HOME.html">
+                                    <span class="glyphicon glyphicon-home"></span>Home
+                                </a>
+                            </li>
+                            <li>
+                                <a href="menu-categories.html">
+                                    <span class="glyphicon glyphicon-cutlery"></span><br
+                                    class="hidden-xs">Menu</a>
+                            </li>
+                            
+                            <li>
+                                <a href="ABOUT.html">
+                                    <span class="glyphicon glyphicon-info-sign"></span><br
+                                    class="hidden-xs">About</a>
+                            </li>
+                            <li>
+                                <a href="award.html">
+                                    <span class="glyphicon glyphicon-certificate"></span><br
+                                    class="hidden-xs">Award</a>
+                            </li>
+                            <li id="phone" class="hidden-xs">
+                                <a href="tel:410-602-5000">
+                                    <span>410-602-5000</span></a><article>* We Deliver</article>
+    
+                            </li>
+                        </ul>
+    
+                    </div>
+                </div>
+         </nav>
+     </header>
+     <div id="call-btn" class="visible-xs">
+        <a class="btn" href="tel:410-602-5008">
+        <span class="glyphicon glyphicon-earphone"></span>
+        410-602-5008
+        </a>
+      </div>
+      <div id="xs-deliver" class="text-center visible-xs">* We Deliver</div>
+    
+      <div id="main-content" class="container"></div>
+    
+
+        <div id="containers" class="container">
+            <div class="jumbotron">
+                <img src="jumbotron_768.jpg" alt="Picture-of-Resturant"
+                  class="img-responsive visible-xs img-responsive visible-md img-responsive visible-sm">
+            </div>
+        </div>
+
+        <div id=home-tiles class="row">
+            <div class="col-md-4 col-sm-6 col-xs-12">
+                <a href="menu-categories.html"><div id="menu-tiles"><span>Menu</span></div></a>
+            
+        </div>
+
+        <div id=home-tiles class="row">
+            <div class="col-md-4 col-sm-6 col-xs-12">
+                <a href="special.html"><div id="special-tiles"><span>Specials</span></div></a>
+            
+        </div>
+
+        <div id=home-tiles class="row">
+            <div class="col-md-4 col-sm-6 col-xs-12">
+                <a href="https://goo.gl/maps/Ne9XDvrLqXZhz64C7" target="_blank"><div id="map-tile">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d6169.286746469139!2d-76.71263223756931!3d39.364311948873066!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c81a14e7817803%3A0xab20a0e99daa17ea!2sDavid%20Chu&#39;s%20China%20Bistro!5e0!3m2!1sen!2s!4v1629731425198!5m2!1sen!2s" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                    <span>Maps</span></div></a>
+        </div>
+    
+    
+    
+    
+    <footer class="panel-footer">
+        <div class="container">
+          <div class="row">
+            <section id="hours" class="col-sm-4">
+              <span>Hours:</span><br>
+              Sun-Thurs: 11:15am - 10:00pm<br>
+              Fri: 11:15am - 2:30pm<br>
+              Saturday Closed
+              <hr class="visible-xs">
+            </section>
+            <section id="address" class="col-sm-4">
+              <span>Address:</span><br>
+              7105 Reisterstown Road<br>
+              Baltimore, MD 21215
+              <p>* Delivery area within 3-4 miles, with minimum order of $20 plus $3 charge for all deliveries.</p>
+              <hr class="visible-xs">
+            </section>
+            <section id="testimonials" class="col-sm-4">
+              <p>"The best Chinese restaurant I've been to! And that's saying a lot, since I've been to many!"</p>
+              <p>"Amazing food! Great service! Couldn't ask for more! I'll be back again and again!"</p>
+            </section>
+          </div>
+          <div class="text-center">&copy; Copyright David Chu's China Bistro 2021</div>
+        </div>
+      </footer>
+   
+     
+            
+     
+     
+    <script src="js/jquery-3.6.0.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/script.js"></script>
+    
+    
+ </body>
